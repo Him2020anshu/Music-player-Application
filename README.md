@@ -1,14 +1,20 @@
-## 📑 Features
+# Music Player Application
 
-- **Play, Pause, and Stop** - Easily control your music.
-- **Next and Previous** - Navigate through songs seamlessly.
-- **Volume Control** - Adjust the sound level with a slider.
-- **Progress Bar** - Shows track progress and allows jumping to any point in the song.
-- **Responsive Design** - Works on desktops, tablets, and smartphones.
+This application is a Java-based music player with database integration using JDBC and MySQL. The player allows users to manage music tracks stored in a MySQL database, with functionalities such as playing, pausing, and controlling volume. Maven is used for project management and dependency handling.
 
-## 🛠 Technologies Used
+## Features
+- **Play, Pause, Stop**: Control music playback.
+- **Track Management**: Store and fetch tracks from a MySQL database.
+- **Volume Control**: Adjust the audio level.
+- **Database Integration**: Use MySQL to store track details.
+- **Maven**: Dependency management.
 
+## Technologies Used
 - **HTML** - Structure of the app.
 - **CSS** - Styling for a polished look.
 - **JavaScript** - Core functionality of the player.
+- **Java**: Core application logic.
+- **JDBC**: Database connectivity.
+- **MySQL**: Store music track details.
+- **Maven**: Project management and dependencies.
 
