@@ -1,0 +1,61 @@
+console.log("Welcome to Spotify");
+
+let audioElement = new Audio('songs/1.mp3');
+let songIndex = 0;
+let isShuffle = false;
+let isRepeat = false;
+
+const songs = [
+    { songName: "Warriyo - Mortals", filePath: "songs/1.mp3", coverPath: "covers/1.jpg" },
+    // Add more songs here
+];
+
+const songListContainer = document.querySelector('.songItemContainer');
+const masterPlay = document.getElementById('masterPlay');
+const myProgressBar = document.getElementById('myProgressBar');
+const volumeSlider = document.getElementById('volumeSlider');
+const shuffleButton = document.getElementById('shuffle');
+const repeatButton = document.getElementById('repeat');
+
+// Populate Song List
+songs.forEach((song, i) => {
+    const songItem = document.createElement('div');
+    songItem.className = 'songItem';
+    songItem.innerHTML = `
+        <img src="${song.coverPath}" alt="${song.songName}">
+        <span>${song.songName}</span>
+        <i class="far fa-play-circle playBtn" data-index="${i}"></i>
+    `;
+    songListContainer.appendChild(songItem);
+});
+
+// Play a song
+document.querySelectorAll('.playBtn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const index = e.target.dataset.index;
+        playSong(index);
+    });
+});
+
+function playSong(index) {
+    songIndex = index;
+    audioElement.src = songs[songIndex].filePath;
+    audioElement.play();
+    masterPlay.classList.add('fa-pause-circle');
+}
+
+// Shuffle and Repeat
+shuffleButton.addEventListener('click', () => {
+    isShuffle = !isShuffle;
+    shuffleButton.classList.toggle('active', isShuffle);
+});
+
+repeatButton.addEventListener('click', () => {
+    isRepeat = !isRepeat;
+    repeatButton.classList.toggle('active', isRepeat);
+});
+
+// Volume Control
+volumeSlider.addEventListener('input', () => {
+    audioElement.volume = volumeSlider.value;
+});
