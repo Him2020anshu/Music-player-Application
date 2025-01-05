@@ -19,6 +19,7 @@ This application is a Java-based music player with database integration using JD
 - **Maven**: Project management and dependencies.
 
 ## Project Structure
+
 Music-Player-Application/
 │
 ├── pom.xml                  # Maven configuration file
