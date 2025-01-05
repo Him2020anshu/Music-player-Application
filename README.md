@@ -18,3 +18,34 @@ This application is a Java-based music player with database integration using JD
 - **MySQL**: Store music track details.
 - **Maven**: Project management and dependencies.
 
+## Project Structure
+Music-Player-Application/
+│
+├── pom.xml                  # Maven configuration file
+├── README.md                # Project documentation
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── musicplayer/
+│   │   │           ├── dao/
+│   │   │           │   └── UserDAO.java         # Data Access Object for database operations
+│   │   │           ├── models/
+│   │   │           │   └── User.java            # User model class
+│   │   │           └── servlets/
+│   │   │               └── UserServlet.java     # Servlet to handle user requests
+│   │   │
+│   │   └── webapp/
+│   │       ├── WEB-INF/
+│   │       │   └── web.xml                      # Deployment descriptor for servlet configuration
+│   │       ├── registration.jsp                 # JSP for user registration form
+│   │       └── userProfile.jsp                  # JSP to display user data
+│   │
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── musicplayer/
+│                   └── dao/
+│                       └── UserDAOTest.java     # Unit tests for UserDAO class
+│
+└── target/                    # Compiled files (generated after build)
